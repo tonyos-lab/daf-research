@@ -1,0 +1,254 @@
+{
+  "run_id": "REL-004_run_002",
+  "experiment_id": "REL-004",
+  "title": "Concurrent Loop Reliability",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "Concurrent loops do not share state \u2014 each maintains its individual reliability guarantee regardless of concurrency level.",
+  "depends_on": [
+    "REL-001"
+  ],
+  "started_at": "2026-05-15T15:13:53.321803+00:00",
+  "finished_at": "2026-05-15T15:13:53.514372+00:00",
+  "duration_seconds": 0.192569,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "All 51 concurrent runs succeeded \u2014 loops are fully isolated.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "concurrency_levels_tested": [
+        2,
+        5,
+        10
+      ],
+      "rounds_per_level": 3,
+      "concurrency_2_success_rate": 1.0,
+      "concurrency_5_success_rate": 1.0,
+      "concurrency_10_success_rate": 1.0,
+      "all_levels_100_pct": true,
+      "state_isolation_confirmed": true
+    },
+    "observations": [
+      "Tested concurrency levels: [2, 5, 10]",
+      "No state leakage between concurrent loop instances.",
+      "Each loop maintains its own AgentRegistry, ToolRegistry, and MockLLMClient."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "loop_id": 0,
+        "outcome": "completed",
+        "duration_ms": 4.37,
+        "round": 1,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 1,
+        "outcome": "completed",
+        "duration_ms": 3.9,
+        "round": 1,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 2,
+        "outcome": "completed",
+        "duration_ms": 3.64,
+        "round": 2,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 3,
+        "outcome": "completed",
+        "duration_ms": 3.69,
+        "round": 2,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 4,
+        "outcome": "completed",
+        "duration_ms": 3.71,
+        "round": 3,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 5,
+        "outcome": "completed",
+        "duration_ms": 3.58,
+        "round": 3,
+        "n_concurrent": 2
+      },
+      {
+        "loop_id": 0,
+        "outcome": "completed",
+        "duration_ms": 3.88,
+        "round": 1,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 1,
+        "outcome": "completed",
+        "duration_ms": 3.58,
+        "round": 1,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 2,
+        "outcome": "completed",
+        "duration_ms": 3.53,
+        "round": 1,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 3,
+        "outcome": "completed",
+        "duration_ms": 3.88,
+        "round": 1,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 4,
+        "outcome": "completed",
+        "duration_ms": 3.64,
+        "round": 1,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 5,
+        "outcome": "completed",
+        "duration_ms": 3.67,
+        "round": 2,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 6,
+        "outcome": "completed",
+        "duration_ms": 3.58,
+        "round": 2,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 7,
+        "outcome": "completed",
+        "duration_ms": 3.54,
+        "round": 2,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 8,
+        "outcome": "completed",
+        "duration_ms": 3.66,
+        "round": 2,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 9,
+        "outcome": "completed",
+        "duration_ms": 3.5,
+        "round": 2,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 10,
+        "outcome": "completed",
+        "duration_ms": 3.51,
+        "round": 3,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 11,
+        "outcome": "completed",
+        "duration_ms": 3.56,
+        "round": 3,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 12,
+        "outcome": "completed",
+        "duration_ms": 3.49,
+        "round": 3,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 13,
+        "outcome": "completed",
+        "duration_ms": 3.62,
+        "round": 3,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 14,
+        "outcome": "completed",
+        "duration_ms": 3.58,
+        "round": 3,
+        "n_concurrent": 5
+      },
+      {
+        "loop_id": 0,
+        "outcome": "completed",
+        "duration_ms": 3.73,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 1,
+        "outcome": "completed",
+        "duration_ms": 3.64,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 2,
+        "outcome": "completed",
+        "duration_ms": 3.61,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 3,
+        "outcome": "completed",
+        "duration_ms": 3.57,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 4,
+        "outcome": "completed",
+        "duration_ms": 3.62,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 5,
+        "outcome": "completed",
+        "duration_ms": 3.59,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 6,
+        "outcome": "completed",
+        "duration_ms": 3.6,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 7,
+        "outcome": "completed",
+        "duration_ms": 3.47,
+        "round": 1,
+        "n_concurrent": 10
+      },
+      {
+        "loop_id": 8,
+        "outcome": "completed",
+        "duration_ms": 3.53,
+        "round": 1,
+        "n_concurrent": 10
+      }
+    ],
+    "notes": ""
+  }
+}

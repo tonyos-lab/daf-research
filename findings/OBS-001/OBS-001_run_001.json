@@ -1,0 +1,27 @@
+{
+  "run_id": "OBS-001_run_001",
+  "experiment_id": "OBS-001",
+  "title": "Minimal Audit Schema for Compliance",
+  "domain": "observability",
+  "tier": 1,
+  "hypothesis": "The AuditRecord structure contains all fields required by SOC2, HIPAA, and GDPR with no additions needed.",
+  "depends_on": [],
+  "started_at": "2026-05-15T14:59:49.087652+00:00",
+  "finished_at": "2026-05-15T14:59:49.092611+00:00",
+  "duration_seconds": 0.004959,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: object list can't be used in 'await' expression",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: object list can't be used in 'await' expression"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

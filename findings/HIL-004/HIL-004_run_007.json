@@ -1,0 +1,113 @@
+{
+  "run_id": "HIL-004_run_007",
+  "experiment_id": "HIL-004",
+  "title": "HITL Timeout Behaviour",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A timed-out HumanReviewResponse is treated identically to a rejection \u2014 it triggers replan, and always-timeout escalates.",
+  "depends_on": [
+    "HIL-003"
+  ],
+  "started_at": "2026-05-15T15:19:38.121515+00:00",
+  "finished_at": "2026-05-15T15:19:38.148016+00:00",
+  "duration_seconds": 0.026501,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "HITL timeout behaviour incorrect.",
+    "hypothesis_supported": false,
+    "metrics": {
+      "trials": 10,
+      "timeout_escalates_rate": 1.0,
+      "timed_out_flag_set": true,
+      "timeout_not_treated_as_approval": false,
+      "timeout_identical_to_rejection": false
+    },
+    "observations": [
+      "escalated_rate=1.0",
+      "timed_out_flag=True"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "escalated",
+        "gateway_calls": 1,
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "timed_out_flag": true,
+        "not_approval": false,
+        "correct": false
+      }
+    ],
+    "notes": ""
+  }
+}

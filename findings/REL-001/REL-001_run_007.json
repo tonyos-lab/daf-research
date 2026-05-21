@@ -1,0 +1,80 @@
+{
+  "run_id": "REL-001_run_007",
+  "experiment_id": "REL-001",
+  "title": "Per-Call Reliability Characterisation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A MockLLMClient with fail_after=N raises LLMClientError on exactly call N+1, giving exactly N successful calls. This holds deterministically for N in [0, 1, 2, 3, 5].",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:13:52.279564+00:00",
+  "finished_at": "2026-05-15T15:13:52.279763+00:00",
+  "duration_seconds": 0.000199,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "MockLLMClient fail_after is deterministic across all 5 tested values \u2014 hypothesis supported.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "values_tested": 5,
+      "values_passed": 5,
+      "values_failed": 0,
+      "all_deterministic": true,
+      "fail_after_0_passed": true,
+      "fail_after_1_passed": true,
+      "fail_after_2_passed": true,
+      "fail_after_3_passed": true,
+      "fail_after_5_passed": true
+    },
+    "observations": [
+      "Tested fail_after values: [0, 1, 2, 3, 5]",
+      "Each value produced exactly N successful calls before LLMClientError.",
+      "DAF planning-stage failure injection is fully deterministic."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "fail_after": 0,
+        "expected_successes": 0,
+        "actual_successes": 0,
+        "expected_error_on": 1,
+        "actual_error_on": 1,
+        "passed": true
+      },
+      {
+        "fail_after": 1,
+        "expected_successes": 1,
+        "actual_successes": 1,
+        "expected_error_on": 2,
+        "actual_error_on": 2,
+        "passed": true
+      },
+      {
+        "fail_after": 2,
+        "expected_successes": 2,
+        "actual_successes": 2,
+        "expected_error_on": 3,
+        "actual_error_on": 3,
+        "passed": true
+      },
+      {
+        "fail_after": 3,
+        "expected_successes": 3,
+        "actual_successes": 3,
+        "expected_error_on": 4,
+        "actual_error_on": 4,
+        "passed": true
+      },
+      {
+        "fail_after": 5,
+        "expected_successes": 5,
+        "actual_successes": 5,
+        "expected_error_on": 6,
+        "actual_error_on": 6,
+        "passed": true
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "run_id": "OBS-003_run_002",
+  "experiment_id": "OBS-003",
+  "title": "Audit Record Immutability",
+  "domain": "observability",
+  "tier": 1,
+  "hypothesis": "AuditRecord is frozen at creation \u2014 no field can be mutated, and the store rejects any attempt to overwrite an existing record.",
+  "depends_on": [
+    "OBS-001"
+  ],
+  "started_at": "2026-05-16T01:15:07.099573+00:00",
+  "finished_at": "2026-05-16T01:15:07.100035+00:00",
+  "duration_seconds": 0.000462,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "AuditRecord is fully immutable \u2014 all 5 fields frozen, store rejects overwrites, write order preserved.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "tests_run": 7,
+      "tests_passed": 7,
+      "all_fields_frozen": true,
+      "store_rejects_overwrite": true,
+      "write_order_preserved": true,
+      "all_correct": true
+    },
+    "observations": [
+      "event_type, tenant_id, user_id, created_at, audit_id all frozen.",
+      "InMemoryAuditStore rejects duplicate audit_id writes.",
+      "Original record intact after failed overwrite attempt.",
+      "Query returns records in insertion order."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "test": "event_type_frozen",
+        "correct": true
+      },
+      {
+        "test": "tenant_id_frozen",
+        "correct": true
+      },
+      {
+        "test": "user_id_frozen",
+        "correct": true
+      },
+      {
+        "test": "created_at_frozen",
+        "correct": true
+      },
+      {
+        "test": "audit_id_frozen",
+        "correct": true
+      },
+      {
+        "test": "store_rejects_overwrite",
+        "correct": true
+      },
+      {
+        "test": "write_order_preserved",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

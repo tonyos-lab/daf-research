@@ -1,0 +1,27 @@
+{
+  "run_id": "REL-001_run_001",
+  "experiment_id": "REL-001",
+  "title": "Per-Call Reliability Characterisation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A MockLLMClient with fail_after=3 will produce exactly 3 successful calls followed by exactly 1 LLMClientError, giving a success rate of 3/4 = 0.7500, reproducibly across all 10 trial repetitions.",
+  "depends_on": [],
+  "started_at": "2026-05-15T13:57:09.103686+00:00",
+  "finished_at": "2026-05-15T13:57:09.104005+00:00",
+  "duration_seconds": 0.000319,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: [Errno 2] No such file or directory: '/home/claude/policy/matrix/example.yaml'",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "FileNotFoundError: [Errno 2] No such file or directory: '/home/claude/policy/matrix/example.yaml'"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

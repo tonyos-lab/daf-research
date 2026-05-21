@@ -1,0 +1,48 @@
+# HIL Research Policy Matrix
+# Tasks with data_required containing "requires_review" are HITL-gated
+version: "1.0.0"
+tenant_id: "hil-research"
+effective: "2026-01-01T00:00:00Z"
+
+agent_roles:
+  document_reader:
+    permitted_tools:
+      - read_db
+    permitted_data_sources:
+      - internal
+      - requires_review
+    permitted_task_types:
+      - llm_extraction
+      - llm_summarization
+    max_llm_calls_per_step: 3
+
+orchestrator_routing:
+  default_orchestrator:
+    may_spawn_roles:
+      - document_reader
+
+budget_policy:
+  max_cost_per_call_usd: 0.02
+  max_cost_per_step_usd: 0.10
+  max_cost_per_workflow_usd: 0.50
+  max_cost_per_user_day_usd: 5.00
+  max_cost_per_tenant_day_usd: 100.00
+
+compliance_rules:
+  - rule_ref: "GATE-HIL-001"
+    condition:
+      field: "data_required"
+      operator: "contains"
+      value: "requires_review"
+    action: require_human_gate
+    remediation_hint: "This task requires human review before execution."
+
+risk_policy:
+  irreversible_min_confidence: 0.90
+  always_gate_action_classes: []
+  auto_approve_action_classes:
+    - read_only
+
+loop_policy:
+  max_replan_attempts: 3
+  max_duration_s: 300

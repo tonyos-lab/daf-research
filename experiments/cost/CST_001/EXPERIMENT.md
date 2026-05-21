@@ -1,0 +1,121 @@
+# CST-001 — Quality-Cost Tradeoff by Model Tier
+
+---
+
+## Identity
+
+| Field              | Value |
+|--------------------|-------|
+| **Experiment ID**  | CST-001 |
+| **Domain**         | cost |
+| **Tier**           | 2 (requires Docker stack and/or LLM_API_KEY) |
+| **Status**         | defined |
+| **Claimed by**     | unclaimed |
+| **Depends on**     | none |
+| **Estimated cost** | $5.00 (live API) |
+| **Estimated time** | 45 minutes |
+
+---
+
+## Research Question
+
+For each call type, what is the quality-cost tradeoff across model tiers?
+
+---
+
+## Hypothesis
+
+Haiku produces acceptable plan quality for simple single-agent tasks at <20% of the cost of Sonnet.
+
+---
+
+## What This Experiment Measures
+
+> TODO: Fill in a 3–5 sentence plain-language description of what
+> this experiment actually does. See EXPERIMENT_TEMPLATE.md for guidance.
+
+---
+
+## Metrics
+
+| Metric Key | Type | Unit | Description |
+|------------|------|------|-------------|
+| `total_runs` | int | — | Total iterations executed |
+| `pass_count` | int | — | Iterations matching expected behaviour |
+| `fail_count` | int | — | Iterations deviating from expected behaviour |
+| `pass_rate`  | float | ratio 0–1 | pass_count / total_runs |
+
+> TODO: Add experiment-specific metrics above.
+
+---
+
+## Prerequisites
+
+**Tier 2 — satisfied by RESEARCH_SETUP.md:**
+- [ ] Python virtual environment active
+- [ ] `pip install -r requirements.txt` complete
+- [ ] `pip install -r requirements-dev.txt` complete
+- [ ] DAF importable (`python -c "import daf"` succeeds)
+- [ ] Research infrastructure importable
+
+**Additional for Tier 2:**
+- [ ] `docker-compose up -d` running
+- [ ] `LLM_API_KEY` set in `.env`
+
+---
+
+## Preparation Steps
+
+1. Navigate to the DAF project root and activate venv:
+   ```bash
+   cd /path/to/daf
+   source .venv/bin/activate   # Linux/macOS
+   source .venv/Scripts/activate  # Windows Git Bash
+   ```
+
+2. Verify readiness:
+   ```bash
+   python -c "from experiments.cost.CST_001.experiment import CST_001; print('ready')"
+   ```
+   Expected output: `ready`
+
+> TODO: Add any experiment-specific preparation steps.
+
+---
+
+## Execution
+
+```bash
+python -m daf.research.runner experiments/cost/CST_001/experiment.py
+```
+
+**Expected duration:** 45 minutes
+**Expected cost:** $5.00 (live API)
+
+---
+
+## Result Recording
+
+```
+findings/CST-001/CST-001_run_NNN.log
+findings/CST-001/CST-001_run_NNN.json
+```
+
+### Checklist:
+- [ ] `.log` file ends with `END OF LOG`
+- [ ] `.json` is valid JSON
+- [ ] `verdict` is `pass`, `fail`, `inconclusive`, or `error`
+- [ ] All metrics present
+- [ ] `hypothesis_supported` is `true` or `false`
+
+---
+
+## Related Experiments
+
+| Experiment ID | Relationship |
+|---------------|-------------|
+| — | — |
+
+---
+
+_Experiment Spec — CST-001 — v1.0 — TonyOS Lab_

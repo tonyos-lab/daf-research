@@ -1,0 +1,107 @@
+{
+  "run_id": "HIL-002_run_002",
+  "experiment_id": "HIL-002",
+  "title": "HITL Approval Flow Correctness",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning approved causes the gated task to execute and the workflow to complete.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:17:55.908123+00:00",
+  "finished_at": "2026-05-15T15:17:55.947309+00:00",
+  "duration_seconds": 0.039186,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "HITL approval flow incorrect.",
+    "hypothesis_supported": false,
+    "metrics": {
+      "trials": 10,
+      "gateway_called_count": 0,
+      "completed_count": 0,
+      "single_iteration_count": 0,
+      "all_correct": false,
+      "approval_unblocks_execution": false
+    },
+    "observations": [
+      "[{'trial': 1, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 2, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 3, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 4, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 5, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 6, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 7, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 8, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 9, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}, {'trial': 10, 'gateway_called': False, 'outcome': 'escalated', 'iterations': 3, 'correct': False}]"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 2,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 3,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 4,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 5,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 6,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 7,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 8,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 9,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "trial": 10,
+        "gateway_called": false,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "run_id": "REL-002_run_001",
+  "experiment_id": "REL-002",
+  "title": "Reliability Composability Under Sequential Tasks",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A multi-task plan where each task is independently reliable produces consistent outcomes across repeated runs \u2014 no task chain introduces hidden failure modes under nominal conditions.",
+  "depends_on": [
+    "REL-001"
+  ],
+  "started_at": "2026-05-15T15:13:43.634206+00:00",
+  "finished_at": "2026-05-15T15:13:43.944106+00:00",
+  "duration_seconds": 0.3099,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "All chain lengths (1\u20135 tasks) succeed 100% across 20 trials \u2014 reliability composes perfectly under nominal conditions.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_per_chain": 20,
+      "chain_lengths_tested": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "chain_1_success_rate": 1.0,
+      "chain_2_success_rate": 1.0,
+      "chain_3_success_rate": 1.0,
+      "chain_5_success_rate": 1.0,
+      "all_chains_100_pct": true,
+      "chain_1_mean_ms": 3.77,
+      "chain_5_mean_ms": 3.99,
+      "duration_ratio_5_to_1": 1.06,
+      "duration_scales_linearly": true
+    },
+    "observations": [
+      "1, 2, 3, and 5-task chains all achieve 100% success rate.",
+      "Duration scales 1.1x from 1 to 5 tasks (linear).",
+      "No hidden failure modes introduced by task chaining."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "chain_length": 1,
+        "trial": 1,
+        "outcome": "completed",
+        "duration_ms": 4.61
+      },
+      {
+        "chain_length": 1,
+        "trial": 2,
+        "outcome": "completed",
+        "duration_ms": 3.91
+      },
+      {
+        "chain_length": 1,
+        "trial": 3,
+        "outcome": "completed",
+        "duration_ms": 3.66
+      },
+      {
+        "chain_length": 1,
+        "trial": 4,
+        "outcome": "completed",
+        "duration_ms": 3.74
+      },
+      {
+        "chain_length": 1,
+        "trial": 5,
+        "outcome": "completed",
+        "duration_ms": 3.82
+      },
+      {
+        "chain_length": 1,
+        "trial": 6,
+        "outcome": "completed",
+        "duration_ms": 3.65
+      },
+      {
+        "chain_length": 1,
+        "trial": 7,
+        "outcome": "completed",
+        "duration_ms": 3.76
+      },
+      {
+        "chain_length": 1,
+        "trial": 8,
+        "outcome": "completed",
+        "duration_ms": 3.68
+      },
+      {
+        "chain_length": 1,
+        "trial": 9,
+        "outcome": "completed",
+        "duration_ms": 3.73
+      },
+      {
+        "chain_length": 1,
+        "trial": 10,
+        "outcome": "completed",
+        "duration_ms": 3.73
+      },
+      {
+        "chain_length": 1,
+        "trial": 11,
+        "outcome": "completed",
+        "duration_ms": 3.84
+      },
+      {
+        "chain_length": 1,
+        "trial": 12,
+        "outcome": "completed",
+        "duration_ms": 3.71
+      },
+      {
+        "chain_length": 1,
+        "trial": 13,
+        "outcome": "completed",
+        "duration_ms": 3.76
+      },
+      {
+        "chain_length": 1,
+        "trial": 14,
+        "outcome": "completed",
+        "duration_ms": 3.65
+      },
+      {
+        "chain_length": 1,
+        "trial": 15,
+        "outcome": "completed",
+        "duration_ms": 3.61
+      },
+      {
+        "chain_length": 1,
+        "trial": 16,
+        "outcome": "completed",
+        "duration_ms": 3.61
+      },
+      {
+        "chain_length": 1,
+        "trial": 17,
+        "outcome": "completed",
+        "duration_ms": 3.67
+      },
+      {
+        "chain_length": 1,
+        "trial": 18,
+        "outcome": "completed",
+        "duration_ms": 3.75
+      },
+      {
+        "chain_length": 1,
+        "trial": 19,
+        "outcome": "completed",
+        "duration_ms": 3.73
+      },
+      {
+        "chain_length": 1,
+        "trial": 20,
+        "outcome": "completed",
+        "duration_ms": 3.7
+      }
+    ],
+    "notes": ""
+  }
+}

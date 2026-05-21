@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this research, please cite it using the following metadata."
+type: software
+title: "DAF Research — PBAS Empirical Validation"
+version: 1.0.0
+date-released: 2026-05-20
+authors:
+  - family-names: Ochinang
+    given-names: Tony
+    affiliation: TonyOS Lab
+repository-code: https://github.com/tonyos-lab/daf-research
+abstract: >
+  Empirical research validating the Policy-Based Agentic Safety (PBAS)
+  architecture as implemented in the Deterministic Agentic Framework (DAF).
+  Contains 30 experiments across 6 domains: reliability, security,
+  observability, orchestration, cost, and human-in-loop.
+keywords:
+  - agentic AI
+  - AI safety
+  - policy engine
+  - empirical research
+  - governed orchestration
+license: Apache-2.0

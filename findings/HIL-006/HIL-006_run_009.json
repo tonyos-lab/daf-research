@@ -1,0 +1,219 @@
+{
+  "run_id": "HIL-006_run_009",
+  "experiment_id": "HIL-006",
+  "title": "Partial HITL Approval",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "Mixed decisions in HumanReviewResponse: approved tasks execute, the loop replans for rejected tasks.",
+  "depends_on": [
+    "HIL-002",
+    "HIL-003"
+  ],
+  "started_at": "2026-05-16T01:15:09.246157+00:00",
+  "finished_at": "2026-05-16T01:15:09.341029+00:00",
+  "duration_seconds": 0.094872,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Multi-task HITL decisions handled correctly \u2014 approve completes, reject escalates, mixed plans work.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_per_scenario": 10,
+      "scenario_A_all_approve_completes": 1.0,
+      "scenario_B_mixed_plan_approved_completes": 1.0,
+      "scenario_C_all_reject_escalates": 1.0,
+      "all_correct": true
+    },
+    "observations": [
+      "Two gated tasks, both approved \u2192 completed.",
+      "Safe+gated plan with gated approved \u2192 completed.",
+      "Two gated tasks, all rejected \u2192 escalated after max_replan_attempts."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 1,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 2,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 3,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 4,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 5,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 6,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 7,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 8,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 9,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 10,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 1,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 2,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 3,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 4,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 5,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 6,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 7,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 8,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 9,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "trial": 10,
+        "outcome": "escalated",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "run_id": "CST-007_run_003",
+  "experiment_id": "CST-007",
+  "title": "Mock vs Live Cost Divergence",
+  "domain": "cost",
+  "tier": 1,
+  "hypothesis": "MockLLMClient cost tracking is structurally identical to live API cost tracking \u2014 LLMResponse cost fields are the same, BudgetTracker processes them identically, and FinalResponse total_cost_usd reflects agent execution cost in both cases.",
+  "depends_on": [
+    "CST-004"
+  ],
+  "started_at": "2026-05-16T01:29:28.701566+00:00",
+  "finished_at": "2026-05-16T01:29:28.753786+00:00",
+  "duration_seconds": 0.05222,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Mock/live cost divergence detected in: ['llm_response_cost_fields', 'estimate_cost_scales']",
+    "hypothesis_supported": false,
+    "metrics": {
+      "tests_run": 8,
+      "tests_passed": 6,
+      "llm_response_has_cost_field": false,
+      "budget_tracker_processes_mock": true,
+      "cost_flows_to_final_response": true,
+      "estimate_cost_scales": false,
+      "interface_parity_confirmed": true,
+      "all_correct": false
+    },
+    "observations": [
+      "Failed tests: ['llm_response_cost_fields', 'estimate_cost_scales']"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "test": "llm_response_cost_fields",
+        "cost_usd": null,
+        "correct": false
+      },
+      {
+        "test": "bt_mock_cost_within_budget",
+        "correct": true
+      },
+      {
+        "test": "bt_mock_cost_over_budget",
+        "correct": true
+      },
+      {
+        "test": "bt_mock_cost_at_exact_limit",
+        "correct": true
+      },
+      {
+        "test": "cost_flows_to_final_response",
+        "correct_trials": 10,
+        "correct": true
+      },
+      {
+        "test": "estimate_cost_scales",
+        "cost_100": 0.001,
+        "cost_1000": 0.001,
+        "correct": false
+      },
+      {
+        "test": "model_id_string",
+        "model_id": "mock-model",
+        "correct": true
+      },
+      {
+        "test": "interface_parity",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

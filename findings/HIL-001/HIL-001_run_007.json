@@ -1,0 +1,87 @@
+{
+  "run_id": "HIL-001_run_007",
+  "experiment_id": "HIL-001",
+  "title": "HITL Gate Trigger Accuracy",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "Every irreversible task at low confidence is gated 100% of the time; reversible tasks at high confidence are never gated.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:49:20.092980+00:00",
+  "finished_at": "2026-05-15T15:49:20.150908+00:00",
+  "duration_seconds": 0.057928,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "HITL gate triggers exactly on always_gate tasks and never on safe tasks \u2014 100% accuracy across 10 trials.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials": 10,
+      "gated_task_triggered_correctly": 10,
+      "safe_task_not_gated": 10,
+      "gated_trigger_rate": 1.0,
+      "false_gate_rate": 0.0,
+      "all_correct": true
+    },
+    "observations": [
+      "Task with data_required='requires_review' triggers gateway 100%.",
+      "Task with data_required='internal' never triggers gateway (0% false-gate rate).",
+      "Approved gated plans complete successfully."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 2,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 3,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 4,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 5,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 6,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 7,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 8,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 9,
+        "gated_ok": true,
+        "safe_ok": true
+      },
+      {
+        "trial": 10,
+        "gated_ok": true,
+        "safe_ok": true
+      }
+    ],
+    "notes": ""
+  }
+}

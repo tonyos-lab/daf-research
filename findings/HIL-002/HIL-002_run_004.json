@@ -1,0 +1,109 @@
+{
+  "run_id": "HIL-002_run_004",
+  "experiment_id": "HIL-002",
+  "title": "HITL Approval Flow Correctness",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning approved causes the gated task to execute and the workflow to complete.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:19:09.149978+00:00",
+  "finished_at": "2026-05-15T15:19:09.177178+00:00",
+  "duration_seconds": 0.0272,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Approved HITL response unblocks execution correctly \u2014 workflow completes in 1 iteration 10/10 trials.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials": 10,
+      "gateway_called_count": 10,
+      "completed_count": 10,
+      "single_iteration_count": 10,
+      "all_correct": true,
+      "approval_unblocks_execution": true
+    },
+    "observations": [
+      "Gateway called exactly once per gated plan.",
+      "Approved response produces outcome=completed.",
+      "Loop completes in exactly 1 iteration \u2014 no replanning needed."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 2,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 3,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 4,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 5,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 6,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 7,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 8,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 9,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      },
+      {
+        "trial": 10,
+        "gateway_called": true,
+        "outcome": "completed",
+        "iterations": 1,
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "run_id": "HIL-003_run_002",
+  "experiment_id": "HIL-003",
+  "title": "HITL Rejection Triggers Replan",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning rejected causes the loop to replan; after max_replan_attempts the loop escalates.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:17:56.209319+00:00",
+  "finished_at": "2026-05-15T15:17:56.289269+00:00",
+  "duration_seconds": 0.07995,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Rejection flow failure: A_failed=0 B_failed=10",
+    "hypothesis_supported": false,
+    "metrics": {
+      "trials_per_scenario": 10,
+      "scenario_A_escalated_rate": 1.0,
+      "scenario_B_completed_rate": 0.0,
+      "all_correct": false,
+      "rejection_triggers_replan": false
+    },
+    "observations": [
+      "A failures: 0/10",
+      "B failures: 10/10"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "escalated",
+        "gateway_calls": 0,
+        "iterations": 3,
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 1,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 2,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 3,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 4,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 5,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 6,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 7,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 8,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 9,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      },
+      {
+        "scenario": "B",
+        "trial": 10,
+        "outcome": "escalated",
+        "iterations": 3,
+        "correct": false
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "run_id": "SEC-002_run_002",
+  "experiment_id": "SEC-002",
+  "title": "Tool Permission Escalation Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "Any plan referencing tools not in permitted_tools is rejected 100% of the time regardless of confidence, cost, or rationale.",
+  "depends_on": [
+    "SEC-001"
+  ],
+  "started_at": "2026-05-15T15:06:58.911960+00:00",
+  "finished_at": "2026-05-15T15:06:58.913415+00:00",
+  "duration_seconds": 0.001455,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Tool permission escalation blocked 100% across 44 cases and 11 forbidden tools.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "forbidden_tool_cases_tested": 44,
+      "all_forbidden_rejected": true,
+      "rejected_count": 44,
+      "resistance_rate": 1.0,
+      "combo_attack_rejected": true,
+      "permitted_tool_still_approved": true
+    },
+    "observations": [
+      "All 11 forbidden tools rejected at all confidence levels.",
+      "Permitted+forbidden combo correctly rejected.",
+      "Permitted tool alone still approved \u2014 no false positives."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "tool": "delete_record",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "delete_record",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "delete_record",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "delete_record",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "send_email",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "send_email",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "send_email",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "send_email",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "write_db",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "write_db",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "write_db",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "write_db",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "admin_access",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "admin_access",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "admin_access",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "admin_access",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "execute_code",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "execute_code",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "execute_code",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "execute_code",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "drop_table",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "drop_table",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "drop_table",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "drop_table",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "modify_policy",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "modify_policy",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "modify_policy",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "modify_policy",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "read_all",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "read_all",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "read_all",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "read_all",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "*",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "*",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "*",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "*",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "read_db_AND_delete",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "read_db_AND_delete",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "read_db_AND_delete",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "read_db_AND_delete",
+        "confidence": 1.0,
+        "rejected": true
+      },
+      {
+        "tool": "['read_db','delete_record']",
+        "confidence": 0.5,
+        "rejected": true
+      },
+      {
+        "tool": "['read_db','delete_record']",
+        "confidence": 0.9,
+        "rejected": true
+      },
+      {
+        "tool": "['read_db','delete_record']",
+        "confidence": 0.999,
+        "rejected": true
+      },
+      {
+        "tool": "['read_db','delete_record']",
+        "confidence": 1.0,
+        "rejected": true
+      }
+    ],
+    "notes": ""
+  }
+}

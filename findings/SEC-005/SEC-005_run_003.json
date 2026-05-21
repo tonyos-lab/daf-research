@@ -1,0 +1,59 @@
+{
+  "run_id": "SEC-005_run_003",
+  "experiment_id": "SEC-005",
+  "title": "Audit Record Forgery Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "AuditStore rejects duplicate audit IDs and AuditRecord is frozen \u2014 mutation and forgery are impossible.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:13:58.003641+00:00",
+  "finished_at": "2026-05-15T15:13:58.004606+00:00",
+  "duration_seconds": 0.000965,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "AuditRecord is fully forgery-resistant \u2014 mutation and duplicate injection both blocked.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "tests_run": 5,
+      "tests_passed": 5,
+      "record_mutation_blocked": true,
+      "duplicate_id_rejected": true,
+      "original_record_intact": true,
+      "unique_id_guarantee": true,
+      "all_forgery_vectors_blocked": true
+    },
+    "observations": [
+      "AuditRecord frozen model prevents field mutation.",
+      "InMemoryAuditStore rejects duplicate audit_id writes.",
+      "Original records remain intact after failed duplicate write.",
+      "100 consecutive make() calls produce 100 unique audit IDs."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "test": "record_frozen",
+        "correct": true
+      },
+      {
+        "test": "payload_frozen",
+        "correct": true
+      },
+      {
+        "test": "duplicate_id_rejected",
+        "correct": true
+      },
+      {
+        "test": "original_intact",
+        "correct": true
+      },
+      {
+        "test": "unique_ids",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

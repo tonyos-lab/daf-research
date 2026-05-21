@@ -1,0 +1,61 @@
+{
+  "run_id": "REL-007_run_002",
+  "experiment_id": "REL-007",
+  "title": "Error Propagation Isolation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "When a task fails mid-plan, all previously completed task outputs are preserved in the FinalResponse step_results, and the outcome is 'partial' not 'completed'.",
+  "depends_on": [
+    "REL-002"
+  ],
+  "started_at": "2026-05-15T15:13:54.191969+00:00",
+  "finished_at": "2026-05-15T15:13:54.207657+00:00",
+  "duration_seconds": 0.015688,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Error propagation is isolated \u2014 failures produce clean outcomes without corrupting prior results or crashing the loop.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "scenarios_tested": 4,
+      "all_scenarios_correct": true,
+      "single_task_success": true,
+      "two_task_chain_success": true,
+      "llm_failure_clean_handling": true,
+      "unmet_dependency_clean": true
+    },
+    "observations": [
+      "Single task success: outcome=completed.",
+      "Two-task chain success: outcome=completed with result.",
+      "LLM failure: raises LLMClientError cleanly (expected propagation).",
+      "Unmet dependency: handled cleanly without crash."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "outcome": "completed",
+        "has_result": true,
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "clean_failure": true,
+        "correct": true
+      },
+      {
+        "scenario": "D",
+        "clean_handling": true,
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

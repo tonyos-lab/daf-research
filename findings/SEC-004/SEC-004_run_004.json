@@ -1,0 +1,88 @@
+{
+  "run_id": "SEC-004_run_004",
+  "experiment_id": "SEC-004",
+  "title": "Compliance Rule Bypass Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "A compliance rule with action=block fires 100% of the time on matching inputs, regardless of confidence, cost, or other field values.",
+  "depends_on": [
+    "SEC-001"
+  ],
+  "started_at": "2026-05-15T15:20:40.409805+00:00",
+  "finished_at": "2026-05-15T15:20:40.410403+00:00",
+  "duration_seconds": 0.000598,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Compliance block rules fire 100% on all matching inputs \u2014 no bypass possible.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "cases_tested": 12,
+      "block_rule_fired_count": 11,
+      "clean_data_approved": true,
+      "mixed_data_blocked": true,
+      "all_block_cases_correct": true,
+      "resistance_rate": 1.0
+    },
+    "observations": [
+      "Block rule fires at all confidence levels (0.1 to 1.0).",
+      "Block rule fires at all cost levels (0.0 to 0.10).",
+      "Mixed data sources: block fires if any value matches.",
+      "Non-triggering data approved \u2014 no false positives."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "case": "block_conf_0.1",
+        "blocked": true
+      },
+      {
+        "case": "block_conf_0.5",
+        "blocked": true
+      },
+      {
+        "case": "block_conf_0.9",
+        "blocked": true
+      },
+      {
+        "case": "block_conf_0.99",
+        "blocked": true
+      },
+      {
+        "case": "block_conf_1.0",
+        "blocked": true
+      },
+      {
+        "case": "block_cost_0.0",
+        "blocked": true
+      },
+      {
+        "case": "block_cost_0.001",
+        "blocked": true
+      },
+      {
+        "case": "block_cost_0.05",
+        "blocked": true
+      },
+      {
+        "case": "block_cost_0.1",
+        "blocked": true
+      },
+      {
+        "case": "clean_data_approved",
+        "blocked": false
+      },
+      {
+        "case": "mixed_data_blocked",
+        "blocked": true
+      },
+      {
+        "case": "equals_operator_block",
+        "blocked": true
+      }
+    ],
+    "notes": ""
+  }
+}

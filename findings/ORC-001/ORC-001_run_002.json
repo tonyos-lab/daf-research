@@ -1,0 +1,146 @@
+{
+  "run_id": "ORC-001_run_002",
+  "experiment_id": "ORC-001",
+  "title": "Task Dependency Resolution Correctness",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Tasks with declared depends_on always execute after their dependencies, regardless of plan ordering.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:49:17.548201+00:00",
+  "finished_at": "2026-05-15T15:49:17.595454+00:00",
+  "duration_seconds": 0.047253,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Task dependency ordering enforced correctly in all 10 trials \u2014 ST-01\u2192ST-02\u2192ST-03 every time.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials": 10,
+      "correct_order_count": 10,
+      "completed_count": 10,
+      "dependency_order_rate": 1.0,
+      "all_correct": true
+    },
+    "observations": [
+      "3-task dependency chain always executes in declared order.",
+      "No task executes before its dependency completes.",
+      "outcome=completed in all trials."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 2,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 3,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 4,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 5,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 6,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 7,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 8,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 9,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      },
+      {
+        "trial": 10,
+        "outcome": "completed",
+        "execution_order": [
+          "ST-01",
+          "ST-02",
+          "ST-03"
+        ],
+        "order_correct": true,
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

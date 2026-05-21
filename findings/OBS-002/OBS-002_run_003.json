@@ -1,0 +1,79 @@
+{
+  "run_id": "OBS-002_run_003",
+  "experiment_id": "OBS-002",
+  "title": "Audit Trail Completeness",
+  "domain": "observability",
+  "tier": 1,
+  "hypothesis": "Every loop execution produces exactly the expected set of audit event types with no gaps \u2014 happy path, escalation, and HITL paths each produce distinct but complete trails.",
+  "depends_on": [
+    "OBS-001"
+  ],
+  "started_at": "2026-05-16T01:15:09.839122+00:00",
+  "finished_at": "2026-05-16T01:15:09.856726+00:00",
+  "duration_seconds": 0.017604,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Audit trail is complete across all 5 scenarios \u2014 every state transition is recorded in order.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "scenarios_tested": 5,
+      "all_correct": true,
+      "happy_path_1task_complete": true,
+      "happy_path_3tasks_correct_counts": true,
+      "escalation_trail_complete": true,
+      "workflow_completed_is_last": true,
+      "workflow_started_is_first": true,
+      "missing_events_scenario_A": 0
+    },
+    "observations": [
+      "Happy path (1 task): all 7 required event types present.",
+      "3-task plan: exactly 3 STEP_STARTED + 3 STEP_COMPLETED events.",
+      "Escalation path: WORKFLOW_ESCALATED + PLAN_EVALUATED/REJECTED present.",
+      "WORKFLOW_STARTED is always first; WORKFLOW_COMPLETED always last."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "events": [
+          "workflow_started",
+          "plan_proposed",
+          "plan_evaluated",
+          "execution_started",
+          "step_started",
+          "step_completed",
+          "workflow_completed"
+        ],
+        "missing": [],
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "step_started": 3,
+        "step_completed": 3,
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "has_started": true,
+        "has_escalated": true,
+        "has_rejected": true,
+        "correct": true
+      },
+      {
+        "scenario": "D",
+        "last_event": "workflow_completed",
+        "correct": true
+      },
+      {
+        "scenario": "E",
+        "first_event": "workflow_started",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

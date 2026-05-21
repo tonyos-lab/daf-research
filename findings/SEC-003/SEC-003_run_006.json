@@ -1,0 +1,117 @@
+{
+  "run_id": "SEC-003_run_006",
+  "experiment_id": "SEC-003",
+  "title": "Budget Bypass Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "No plan with estimated_cost_usd exceeding the PolicyMatrix budget limit can be approved, regardless of field manipulation.",
+  "depends_on": [],
+  "started_at": "2026-05-16T01:15:15.006692+00:00",
+  "finished_at": "2026-05-16T01:15:15.007189+00:00",
+  "duration_seconds": 0.000497,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "All 10 budget boundary cases enforced correctly \u2014 no bypass possible.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "cases_tested": 10,
+      "cases_passed": 10,
+      "cases_failed": 0,
+      "all_bypass_attempts_blocked": true,
+      "exact_limit_approved": true,
+      "epsilon_over_rejected": true
+    },
+    "observations": [
+      "Exact limits approved; epsilon-over limits rejected.",
+      "High confidence (1.0) cannot override budget enforcement.",
+      "Both per-step and per-workflow limits enforced independently."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "case": "under_workflow_and_step",
+        "wf_cost": 0.05,
+        "step_cost": 0.05,
+        "verdict": "APPROVED",
+        "expected": "APPROVED",
+        "correct": true
+      },
+      {
+        "case": "over_workflow_only",
+        "wf_cost": 0.99,
+        "step_cost": 0.05,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "over_step_only",
+        "wf_cost": 0.05,
+        "step_cost": 0.99,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "over_both",
+        "wf_cost": 0.99,
+        "step_cost": 0.99,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "exact_workflow_limit",
+        "wf_cost": 0.5,
+        "step_cost": 0.05,
+        "verdict": "APPROVED",
+        "expected": "APPROVED",
+        "correct": true
+      },
+      {
+        "case": "epsilon_over_workflow",
+        "wf_cost": 0.501,
+        "step_cost": 0.05,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "exact_step_limit",
+        "wf_cost": 0.05,
+        "step_cost": 0.1,
+        "verdict": "APPROVED",
+        "expected": "APPROVED",
+        "correct": true
+      },
+      {
+        "case": "epsilon_over_step",
+        "wf_cost": 0.05,
+        "step_cost": 0.101,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "high_conf_over_budget",
+        "wf_cost": 0.99,
+        "step_cost": 0.05,
+        "verdict": "REJECTED",
+        "expected": "REJECTED",
+        "correct": true
+      },
+      {
+        "case": "zero_cost",
+        "wf_cost": 0.0,
+        "step_cost": 0.0,
+        "verdict": "APPROVED",
+        "expected": "APPROVED",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

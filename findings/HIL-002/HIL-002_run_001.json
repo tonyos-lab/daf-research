@@ -1,0 +1,29 @@
+{
+  "run_id": "HIL-002_run_001",
+  "experiment_id": "HIL-002",
+  "title": "HITL Approval Flow Correctness",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning approved causes the gated task to execute and the workflow to complete.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:17:13.665008+00:00",
+  "finished_at": "2026-05-15T15:17:13.665172+00:00",
+  "duration_seconds": 0.000164,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "ValueError: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

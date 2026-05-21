@@ -1,0 +1,96 @@
+{
+  "run_id": "OBS-001_run_010",
+  "experiment_id": "OBS-001",
+  "title": "Minimal Audit Schema for Compliance",
+  "domain": "observability",
+  "tier": 1,
+  "hypothesis": "The AuditRecord structure contains all fields required by SOC2, HIPAA, and GDPR with no additions needed.",
+  "depends_on": [],
+  "started_at": "2026-05-16T01:30:02.736625+00:00",
+  "finished_at": "2026-05-16T01:30:02.742838+00:00",
+  "duration_seconds": 0.006213,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "AuditRecord schema satisfies SOC2, HIPAA, and GDPR simultaneously with no additional fields required.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "audit_records_produced": 7,
+      "audit_record_fields": 7,
+      "soc2_compliant": true,
+      "hipaa_compliant": true,
+      "gdpr_compliant": true,
+      "all_standards_met": true,
+      "event_types_seen": 7,
+      "missing_event_types": 0,
+      "audit_trail_complete": true
+    },
+    "observations": [
+      "AuditRecord has 7 fields: ['audit_id', 'created_at', 'event_type', 'payload', 'request_id', 'tenant_id', 'user_id']",
+      "All three standards' required fields are present in the schema.",
+      "7 audit records produced in a single workflow run.",
+      "All required event types present: True"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "standard": "SOC2",
+        "compliant": true,
+        "required_fields": [
+          "audit_id",
+          "created_at",
+          "event_type",
+          "payload"
+        ],
+        "missing_fields": [],
+        "populated_in_real_record": {
+          "payload": true,
+          "created_at": true,
+          "audit_id": true,
+          "event_type": true
+        }
+      },
+      {
+        "standard": "HIPAA",
+        "compliant": true,
+        "required_fields": [
+          "audit_id",
+          "created_at",
+          "event_type",
+          "payload",
+          "user_id"
+        ],
+        "missing_fields": [],
+        "populated_in_real_record": {
+          "created_at": true,
+          "payload": true,
+          "user_id": true,
+          "event_type": true,
+          "audit_id": true
+        }
+      },
+      {
+        "standard": "GDPR",
+        "compliant": true,
+        "required_fields": [
+          "audit_id",
+          "created_at",
+          "event_type",
+          "tenant_id",
+          "user_id"
+        ],
+        "missing_fields": [],
+        "populated_in_real_record": {
+          "created_at": true,
+          "user_id": true,
+          "tenant_id": true,
+          "event_type": true,
+          "audit_id": true
+        }
+      }
+    ],
+    "notes": ""
+  }
+}

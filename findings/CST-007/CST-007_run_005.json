@@ -1,0 +1,81 @@
+{
+  "run_id": "CST-007_run_005",
+  "experiment_id": "CST-007",
+  "title": "Mock vs Live Cost Divergence",
+  "domain": "cost",
+  "tier": 1,
+  "hypothesis": "MockLLMClient cost tracking is structurally identical to live API cost tracking \u2014 LLMResponse cost fields are the same, BudgetTracker processes them identically, and FinalResponse total_cost_usd reflects agent execution cost in both cases.",
+  "depends_on": [
+    "CST-004"
+  ],
+  "started_at": "2026-05-16T01:30:00.175327+00:00",
+  "finished_at": "2026-05-16T01:30:00.226897+00:00",
+  "duration_seconds": 0.05157,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Mock and live cost tracking are structurally identical \u2014 same LLMResponse fields, same BudgetTracker behaviour, same FinalResponse cost flow.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "tests_run": 8,
+      "tests_passed": 8,
+      "llm_response_has_cost_field": true,
+      "budget_tracker_processes_mock": true,
+      "cost_flows_to_final_response": true,
+      "estimate_cost_scales": true,
+      "interface_parity_confirmed": true,
+      "all_correct": true
+    },
+    "observations": [
+      "LLMResponse contains cost_usd field in both mock and live paths.",
+      "BudgetTracker processes mock-sourced costs with same precision.",
+      "Agent cost flows to FinalResponse.total_cost_usd in 10/10 trials.",
+      "estimate_cost() scales proportionally with token count.",
+      "MockLLMClient implements the same interface as AnthropicClient.",
+      "Only difference between mock and live: source of cost value."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "test": "llm_response_cost_fields",
+        "cost_usd": 0.003,
+        "correct": true
+      },
+      {
+        "test": "bt_mock_cost_within_budget",
+        "correct": true
+      },
+      {
+        "test": "bt_mock_cost_over_budget",
+        "correct": true
+      },
+      {
+        "test": "bt_mock_cost_at_exact_limit",
+        "correct": true
+      },
+      {
+        "test": "cost_flows_to_final_response",
+        "correct_trials": 10,
+        "correct": true
+      },
+      {
+        "test": "estimate_cost_returns_valid_float",
+        "cost_100": 0.001,
+        "cost_1000": 0.001,
+        "correct": true
+      },
+      {
+        "test": "model_id_string",
+        "model_id": "mock-model",
+        "correct": true
+      },
+      {
+        "test": "interface_parity",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

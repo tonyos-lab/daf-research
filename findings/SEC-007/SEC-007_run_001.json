@@ -1,0 +1,119 @@
+{
+  "run_id": "SEC-007_run_001",
+  "experiment_id": "SEC-007",
+  "title": "Input Sanitisation Coverage",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "All 8 adversarial input categories are rejected at the InputProcessor stage \u2014 none reach the LLM.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:06:28.746102+00:00",
+  "finished_at": "2026-05-15T15:06:28.746449+00:00",
+  "duration_seconds": 0.000347,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "InputProcessor correctly handles all 11 invalid input categories with 0 false positives.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "total_cases": 13,
+      "invalid_cases_tested": 11,
+      "valid_cases_tested": 2,
+      "invalid_cases_rejected": 11,
+      "valid_cases_accepted": 2,
+      "rejection_rate": 1.0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "all_sanitisation_correct": true
+    },
+    "observations": [
+      "Empty, whitespace, oversized, and non-string tasks all rejected.",
+      "Invalid constraint values (negative, zero, non-numeric) rejected.",
+      "Non-dict constraints rejected.",
+      "Valid inputs pass through without false rejection."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "case": "empty_task",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "whitespace_task",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "oversized_task",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "non_string_task_int",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "non_string_task_list",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "non_string_task_none",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "negative_cost",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "zero_cost",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "string_cost",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "list_constraints",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "zero_duration",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "case": "valid_minimal",
+        "should_raise": false,
+        "raised": false,
+        "correct": true
+      },
+      {
+        "case": "valid_full",
+        "should_raise": false,
+        "raised": false,
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

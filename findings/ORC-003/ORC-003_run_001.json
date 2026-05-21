@@ -1,0 +1,146 @@
+{
+  "run_id": "ORC-003_run_001",
+  "experiment_id": "ORC-003",
+  "title": "Multi-Agent Plan Execution Isolation",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Two agents executing in the same plan cannot read or write each other's ScopedContext \u2014 each agent only sees its own permitted tools.",
+  "depends_on": [
+    "ORC-002"
+  ],
+  "started_at": "2026-05-15T15:47:56.214860+00:00",
+  "finished_at": "2026-05-15T15:47:56.260110+00:00",
+  "duration_seconds": 0.04525,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Agent isolation failure in 10 trials.",
+    "hypothesis_supported": false,
+    "metrics": {
+      "trials": 10,
+      "all_correct": false,
+      "reader_isolation_rate": 1.0,
+      "analyzer_isolation_rate": 0.0,
+      "completed_rate": 0.0
+    },
+    "observations": [
+      "[{'trial': 1, 'outcome': 'partial', 'reader_isolated': True, 'analyzer_isolated': False, 'reader_tools': ['read_db'], 'analyzer_tools': [], 'correct': False}, {'trial': 2, 'outcome': 'partial', 'reader_isolated': True, 'analyzer_isolated': False, 'reader_tools': ['read_db'], 'analyzer_tools': [], 'correct': False}]"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 2,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 3,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 4,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 5,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 6,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 7,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 8,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 9,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      },
+      {
+        "trial": 10,
+        "outcome": "partial",
+        "reader_isolated": true,
+        "analyzer_isolated": false,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [],
+        "correct": false
+      }
+    ],
+    "notes": ""
+  }
+}

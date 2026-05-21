@@ -1,0 +1,29 @@
+{
+  "run_id": "HIL-003_run_003",
+  "experiment_id": "HIL-003",
+  "title": "HITL Rejection Triggers Replan",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning rejected causes the loop to replan; after max_replan_attempts the loop escalates.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:19:00.489819+00:00",
+  "finished_at": "2026-05-15T15:19:00.489979+00:00",
+  "duration_seconds": 0.00016,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: FixturePlanBuilder.with_task() got an unexpected keyword argument 'data_required'",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: FixturePlanBuilder.with_task() got an unexpected keyword argument 'data_required'"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

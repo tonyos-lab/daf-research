@@ -1,0 +1,29 @@
+{
+  "run_id": "CST-007_run_001",
+  "experiment_id": "CST-007",
+  "title": "Mock vs Live Cost Divergence",
+  "domain": "cost",
+  "tier": 1,
+  "hypothesis": "MockLLMClient cost tracking is structurally identical to live API cost tracking \u2014 LLMResponse cost fields are the same, BudgetTracker processes them identically, and FinalResponse total_cost_usd reflects agent execution cost in both cases.",
+  "depends_on": [
+    "CST-004"
+  ],
+  "started_at": "2026-05-16T01:29:15.599199+00:00",
+  "finished_at": "2026-05-16T01:29:15.656226+00:00",
+  "duration_seconds": 0.057027,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: 'str' object is not callable",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: 'str' object is not callable"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

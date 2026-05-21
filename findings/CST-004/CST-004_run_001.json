@@ -1,0 +1,122 @@
+{
+  "run_id": "CST-004_run_001",
+  "experiment_id": "CST-004",
+  "title": "Budget Enforcement Precision",
+  "domain": "cost",
+  "tier": 1,
+  "hypothesis": "BudgetTracker enforces limits to floating-point precision. Plans at exactly the limit are approved; plans one epsilon over are rejected. No boundary manipulation bypasses enforcement.",
+  "depends_on": [],
+  "started_at": "2026-05-15T14:59:49.319665+00:00",
+  "finished_at": "2026-05-15T14:59:49.332360+00:00",
+  "duration_seconds": 0.012695,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Budget precision failures: BT=[] loop=['well_under_budget', 'at_exact_budget'].",
+    "hypothesis_supported": false,
+    "metrics": {
+      "bt_cases_tested": 7,
+      "bt_cases_passed": 7,
+      "bt_cases_failed": 0,
+      "exact_limit_approved": true,
+      "epsilon_over_rejected": true,
+      "loop_cases_tested": 3,
+      "loop_cases_passed": 1,
+      "reconcile_correct": false,
+      "remaining_after_reconcile": 0.3,
+      "all_precision_tests_pass": false
+    },
+    "observations": [
+      "Failed BT cases: []",
+      "Failed loop cases: ['well_under_budget', 'at_exact_budget']"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "case": "zero_cost",
+        "cost": 0.0,
+        "limit": 0.5,
+        "fits": true,
+        "expected": true,
+        "correct": true
+      },
+      {
+        "case": "well_under",
+        "cost": 0.1,
+        "limit": 0.5,
+        "fits": true,
+        "expected": true,
+        "correct": true
+      },
+      {
+        "case": "at_exact_limit",
+        "cost": 0.5,
+        "limit": 0.5,
+        "fits": true,
+        "expected": true,
+        "correct": true
+      },
+      {
+        "case": "one_cent_over",
+        "cost": 0.51,
+        "limit": 0.5,
+        "fits": false,
+        "expected": false,
+        "correct": true
+      },
+      {
+        "case": "one_epsilon_over",
+        "cost": 0.5000000001,
+        "limit": 0.5,
+        "fits": false,
+        "expected": false,
+        "correct": true
+      },
+      {
+        "case": "double_limit",
+        "cost": 1.0,
+        "limit": 0.5,
+        "fits": false,
+        "expected": false,
+        "correct": true
+      },
+      {
+        "case": "large_overage",
+        "cost": 99.99,
+        "limit": 0.5,
+        "fits": false,
+        "expected": false,
+        "correct": true
+      },
+      {
+        "case": "well_under_budget",
+        "task_cost": 0.1,
+        "outcome": "escalated",
+        "expected": "completed",
+        "correct": false
+      },
+      {
+        "case": "over_budget",
+        "task_cost": 0.99,
+        "outcome": "escalated",
+        "expected": "escalated",
+        "correct": true
+      },
+      {
+        "case": "at_exact_budget",
+        "task_cost": 0.49,
+        "outcome": "escalated",
+        "expected": "completed",
+        "correct": false
+      },
+      {
+        "case": "reconcile",
+        "correct": false,
+        "remaining": 0.3
+      }
+    ],
+    "notes": ""
+  }
+}

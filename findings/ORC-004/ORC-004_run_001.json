@@ -1,0 +1,91 @@
+{
+  "run_id": "ORC-004_run_001",
+  "experiment_id": "ORC-004",
+  "title": "Budget Tracking Accuracy",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Total cost in FinalResponse equals the sum of individual task estimated_costs to floating-point precision.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:47:56.483982+00:00",
+  "finished_at": "2026-05-15T15:47:56.689805+00:00",
+  "duration_seconds": 0.205823,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Budget tracking inaccuracy in cases: ['single_task', 'two_tasks', 'three_tasks', 'mixed_costs']",
+    "hypothesis_supported": false,
+    "metrics": {
+      "cases_tested": 5,
+      "all_costs_accurate": false,
+      "max_cost_error": 0.06,
+      "single_task_cost_ok": false,
+      "multi_task_accumulation_ok": false,
+      "zero_cost_ok": true
+    },
+    "observations": [
+      "[{'case': 'single_task', 'task_costs': [0.02], 'expected': 0.02, 'actual': 0.0, 'cost_correct': False, 'correct': False}, {'case': 'two_tasks', 'task_costs': [0.02, 0.03], 'expected': 0.05, 'actual': 0.0, 'cost_correct': False, 'correct': False}, {'case': 'three_tasks', 'task_costs': [0.01, 0.02, 0.03], 'expected': 0.06, 'actual': 0.0, 'cost_correct': False, 'correct': False}, {'case': 'mixed_costs', 'task_costs': [0.005, 0.015, 0.008], 'expected': 0.028, 'actual': 0.0, 'cost_correct': False, 'correct': False}]"
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "case": "single_task",
+        "task_costs": [
+          0.02
+        ],
+        "expected": 0.02,
+        "actual": 0.0,
+        "cost_correct": false,
+        "correct": false
+      },
+      {
+        "case": "two_tasks",
+        "task_costs": [
+          0.02,
+          0.03
+        ],
+        "expected": 0.05,
+        "actual": 0.0,
+        "cost_correct": false,
+        "correct": false
+      },
+      {
+        "case": "three_tasks",
+        "task_costs": [
+          0.01,
+          0.02,
+          0.03
+        ],
+        "expected": 0.06,
+        "actual": 0.0,
+        "cost_correct": false,
+        "correct": false
+      },
+      {
+        "case": "zero_cost_tasks",
+        "task_costs": [
+          0.0,
+          0.0
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "cost_correct": true,
+        "correct": true
+      },
+      {
+        "case": "mixed_costs",
+        "task_costs": [
+          0.005,
+          0.015,
+          0.008
+        ],
+        "expected": 0.028,
+        "actual": 0.0,
+        "cost_correct": false,
+        "correct": false
+      }
+    ],
+    "notes": ""
+  }
+}

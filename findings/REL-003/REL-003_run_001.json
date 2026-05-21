@@ -1,0 +1,73 @@
+{
+  "run_id": "REL-003_run_001",
+  "experiment_id": "REL-003",
+  "title": "Loop Termination Guarantee",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "The GovernedAgenticLoop always terminates within max_replan_attempts + 1 iterations regardless of LLM output. No combination of LLM responses causes an infinite loop.",
+  "depends_on": [
+    "REL-001"
+  ],
+  "started_at": "2026-05-15T14:59:48.836199+00:00",
+  "finished_at": "2026-05-15T14:59:48.854059+00:00",
+  "duration_seconds": 0.01786,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "All 4 scenarios terminated within bound \u2014 loop termination is guaranteed.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "scenarios_tested": 4,
+      "all_terminated": true,
+      "terminated_count": 4,
+      "iterations_within_bound": 4,
+      "max_iterations_observed": 3,
+      "always_violating_outcome": "escalated",
+      "clean_first_outcome": "escalated",
+      "violating_then_clean_iters": 3
+    },
+    "observations": [
+      "Loop terminates in all tested scenarios (compliant, violating, empty).",
+      "Maximum iterations observed: 3 (bound: 4).",
+      "Always-violating LLM correctly escalates after max_replan_attempts."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "always_violating",
+        "outcome": "escalated",
+        "iterations": 3,
+        "terminated": true,
+        "iterations_ok": true,
+        "outcome_correct": true
+      },
+      {
+        "scenario": "clean_first",
+        "outcome": "escalated",
+        "iterations": 3,
+        "terminated": true,
+        "iterations_ok": true,
+        "outcome_correct": false
+      },
+      {
+        "scenario": "violating_then_clean",
+        "outcome": "escalated",
+        "iterations": 3,
+        "terminated": true,
+        "iterations_ok": true,
+        "outcome_correct": false
+      },
+      {
+        "scenario": "always_empty",
+        "outcome": "completed",
+        "iterations": 1,
+        "terminated": true,
+        "iterations_ok": true,
+        "outcome_correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

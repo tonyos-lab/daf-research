@@ -1,0 +1,29 @@
+{
+  "run_id": "HIL-004_run_005",
+  "experiment_id": "HIL-004",
+  "title": "HITL Timeout Behaviour",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A timed-out HumanReviewResponse is treated identically to a rejection \u2014 it triggers replan, and always-timeout escalates.",
+  "depends_on": [
+    "HIL-003"
+  ],
+  "started_at": "2026-05-15T15:19:20.106602+00:00",
+  "finished_at": "2026-05-15T15:19:20.134864+00:00",
+  "duration_seconds": 0.028262,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: HumanReviewRequest.create() missing 1 required positional argument: 'request_id'",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: HumanReviewRequest.create() missing 1 required positional argument: 'request_id'"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

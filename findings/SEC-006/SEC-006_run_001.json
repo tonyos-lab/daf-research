@@ -1,0 +1,27 @@
+{
+  "run_id": "SEC-006_run_001",
+  "experiment_id": "SEC-006",
+  "title": "HITL Response Forgery Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "HumanReviewResponse is frozen at creation \u2014 a forged approval cannot override a legitimate rejection.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:06:28.520406+00:00",
+  "finished_at": "2026-05-15T15:06:28.520692+00:00",
+  "duration_seconds": 0.000286,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: timed_out",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "AttributeError: timed_out"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "run_id": "ORC-003_run_003",
+  "experiment_id": "ORC-003",
+  "title": "Multi-Agent Plan Execution Isolation",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Two agents executing in the same plan cannot read or write each other's ScopedContext \u2014 each agent only sees its own permitted tools.",
+  "depends_on": [
+    "ORC-002"
+  ],
+  "started_at": "2026-05-15T15:49:18.158338+00:00",
+  "finished_at": "2026-05-15T15:49:18.205057+00:00",
+  "duration_seconds": 0.046719,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Multi-agent isolation confirmed \u2014 each agent sees only its permitted tools across 10 trials.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials": 10,
+      "all_correct": true,
+      "reader_isolation_rate": 1.0,
+      "analyzer_isolation_rate": 1.0,
+      "completed_rate": 1.0
+    },
+    "observations": [
+      "document_reader cannot access risk_analyzer's llm_extraction tool.",
+      "risk_analyzer cannot access document_reader's read_db tool.",
+      "Each agent's tools.names() returns only its own permitted tools.",
+      "Plan completes successfully despite strict isolation."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "trial": 1,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 2,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 3,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 4,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 5,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 6,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 7,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 8,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 9,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      },
+      {
+        "trial": 10,
+        "outcome": "completed",
+        "reader_isolated": true,
+        "analyzer_isolated": true,
+        "reader_tools": [
+          "read_db"
+        ],
+        "analyzer_tools": [
+          "llm_extraction",
+          "llm_evaluation"
+        ],
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

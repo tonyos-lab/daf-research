@@ -1,0 +1,98 @@
+{
+  "run_id": "REL-001_run_002",
+  "experiment_id": "REL-001",
+  "title": "Per-Call Reliability Characterisation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A MockLLMClient with fail_after=3 will produce exactly 3 successful calls followed by exactly 1 LLMClientError, giving a success rate of 3/4 = 0.7500, reproducibly across all 10 trial repetitions.",
+  "depends_on": [],
+  "started_at": "2026-05-15T13:57:19.889535+00:00",
+  "finished_at": "2026-05-15T13:57:19.936681+00:00",
+  "duration_seconds": 0.047146,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "fail",
+    "summary": "Measured success_rate=1.0000 deviated from expected 0.7500 \u2014 hypothesis NOT supported.",
+    "hypothesis_supported": false,
+    "metrics": {
+      "total_runs": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "success_rate": 1.0,
+      "expected_success_rate": 0.75,
+      "rate_matches_expected": false,
+      "mean_duration_ms": 4.562,
+      "std_duration_ms": 0.641
+    },
+    "observations": [
+      "10/10 trials succeeded (expected 7).",
+      "Non-determinism detected in failure injection handling."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "iter": 1,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 2,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 3,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 4,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 5,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 6,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 7,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 8,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 9,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      },
+      {
+        "iter": 10,
+        "outcome": "escalated",
+        "calls": 3,
+        "error": null
+      }
+    ],
+    "notes": ""
+  }
+}

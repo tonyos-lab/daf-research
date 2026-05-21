@@ -1,0 +1,29 @@
+{
+  "run_id": "HIL-004_run_001",
+  "experiment_id": "HIL-004",
+  "title": "HITL Timeout Behaviour",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A timed-out HumanReviewResponse is treated identically to a rejection \u2014 it triggers replan, and always-timeout escalates.",
+  "depends_on": [
+    "HIL-003"
+  ],
+  "started_at": "2026-05-15T15:17:14.143230+00:00",
+  "finished_at": "2026-05-15T15:17:14.143392+00:00",
+  "duration_seconds": 0.000162,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "ValueError: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

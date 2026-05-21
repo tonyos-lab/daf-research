@@ -1,0 +1,29 @@
+{
+  "run_id": "HIL-002_run_003",
+  "experiment_id": "HIL-002",
+  "title": "HITL Approval Flow Correctness",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "A StubHumanReviewGateway returning approved causes the gated task to execute and the workflow to complete.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-15T15:19:00.257512+00:00",
+  "finished_at": "2026-05-15T15:19:00.257656+00:00",
+  "duration_seconds": 0.000144,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: FixturePlanBuilder.with_task() got an unexpected keyword argument 'data_required'",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: FixturePlanBuilder.with_task() got an unexpected keyword argument 'data_required'"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

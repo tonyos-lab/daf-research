@@ -1,0 +1,59 @@
+{
+  "run_id": "SEC-006_run_006",
+  "experiment_id": "SEC-006",
+  "title": "HITL Response Forgery Resistance",
+  "domain": "security",
+  "tier": 1,
+  "hypothesis": "HumanReviewResponse is frozen at creation \u2014 a forged approval cannot override a legitimate rejection.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:20:40.873020+00:00",
+  "finished_at": "2026-05-15T15:20:40.873327+00:00",
+  "duration_seconds": 0.000307,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "HumanReviewResponse is fully forgery-resistant \u2014 frozen, forged IDs rejected, timeout not approval.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "tests_run": 5,
+      "tests_passed": 5,
+      "rejection_frozen": true,
+      "approved_frozen": true,
+      "forged_task_id_returns_none": true,
+      "timeout_not_treated_as_approval": true,
+      "all_forgery_vectors_blocked": true
+    },
+    "observations": [
+      "Rejected and approved responses both frozen after creation.",
+      "decision_for() returns None for forged/unknown task IDs.",
+      "Timeout response correctly not treated as approval.",
+      "Mixed decisions preserved exactly as created."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "test": "rejected_frozen",
+        "correct": true
+      },
+      {
+        "test": "approved_frozen",
+        "correct": true
+      },
+      {
+        "test": "forged_task_rejected",
+        "correct": true
+      },
+      {
+        "test": "timeout_not_approval",
+        "correct": true
+      },
+      {
+        "test": "mixed_decisions_immutable",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

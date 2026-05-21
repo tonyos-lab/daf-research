@@ -1,0 +1,27 @@
+{
+  "run_id": "HIL-001_run_001",
+  "experiment_id": "HIL-001",
+  "title": "HITL Gate Trigger Accuracy",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "Every task with task_type in always_gate_action_classes is gated 100% of the time; no other task is gated.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:17:13.431348+00:00",
+  "finished_at": "2026-05-15T15:17:13.431569+00:00",
+  "duration_seconds": 0.000221,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "ValueError: task_type 'send_email' is not valid. Choose from: ['deterministic', 'llm_classification', 'llm_evaluation', 'llm_extraction', 'llm_generation', 'llm_summarization', 'llm_transformation']"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

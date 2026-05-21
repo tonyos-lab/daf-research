@@ -1,0 +1,163 @@
+{
+  "run_id": "ORC-006_run_002",
+  "experiment_id": "ORC-006",
+  "title": "Empty Plan Handling",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "An empty plan is approved by the PolicyEngine (vacuously) and produces a clean terminal outcome without crashing.",
+  "depends_on": [
+    "ORC-001"
+  ],
+  "started_at": "2026-05-15T15:49:19.315502+00:00",
+  "finished_at": "2026-05-15T15:49:19.385845+00:00",
+  "duration_seconds": 0.070343,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Empty plans handled cleanly \u2014 terminates in all 10 trials with zero cost, no crash.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_A": 10,
+      "trials_B": 5,
+      "empty_plan_terminates": 1.0,
+      "empty_plan_zero_cost": 1.0,
+      "empty_plan_outcomes": [
+        "completed"
+      ],
+      "empty_then_valid_terminates": 1.0,
+      "all_correct": true
+    },
+    "observations": [
+      "Empty plan outcomes: ['completed'] \u2014 all are valid terminal outcomes.",
+      "Empty plan always produces total_cost_usd=0.0.",
+      "Empty-then-valid sequence terminates correctly.",
+      "Loop never crashes on empty sub_tasks list."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "completed",
+        "cost": 0.0,
+        "terminated": true,
+        "zero_cost": true,
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 1,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 2,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 3,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 4,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 5,
+        "outcome": "completed",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

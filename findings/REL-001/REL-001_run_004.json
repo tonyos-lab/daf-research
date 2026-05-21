@@ -1,0 +1,27 @@
+{
+  "run_id": "REL-001_run_004",
+  "experiment_id": "REL-001",
+  "title": "Per-Call Reliability Characterisation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A MockLLMClient with fail_after=N raises LLMClientError on exactly call N+1, giving exactly N successful calls. This holds deterministically for N in [0, 1, 2, 3, 5].",
+  "depends_on": [],
+  "started_at": "2026-05-15T14:50:32.043078+00:00",
+  "finished_at": "2026-05-15T14:50:32.043179+00:00",
+  "duration_seconds": 0.000101,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: dictionary update sequence element #0 has length 1; 2 is required",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "ValueError: dictionary update sequence element #0 has length 1; 2 is required"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

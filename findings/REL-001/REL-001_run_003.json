@@ -1,0 +1,27 @@
+{
+  "run_id": "REL-001_run_003",
+  "experiment_id": "REL-001",
+  "title": "Per-Call Reliability Characterisation",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "A MockLLMClient with fail_after=N raises LLMClientError on exactly call N+1, giving exactly N successful calls. This holds deterministically for N in [0, 1, 2, 3, 5].",
+  "depends_on": [],
+  "started_at": "2026-05-15T14:50:22.986708+00:00",
+  "finished_at": "2026-05-15T14:50:22.986808+00:00",
+  "duration_seconds": 0.0001,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: MockLLMClient.complete() got an unexpected keyword argument 'system_prompt'",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "TypeError: MockLLMClient.complete() got an unexpected keyword argument 'system_prompt'"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

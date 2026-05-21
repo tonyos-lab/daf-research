@@ -1,0 +1,115 @@
+{
+  "run_id": "ORC-005_run_005",
+  "experiment_id": "ORC-005",
+  "title": "Checkpoint Resume Correctness",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "A workflow with checkpointing enabled produces identical outcome and audit trail to one without, across repeated runs.",
+  "depends_on": [
+    "ORC-001"
+  ],
+  "started_at": "2026-05-16T01:30:05.230466+00:00",
+  "finished_at": "2026-05-16T01:30:05.281336+00:00",
+  "duration_seconds": 0.05087,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Checkpoint store works correctly \u2014 deleted on completion, audit trail intact, same outcome as uncheckpointed run.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_per_scenario": 5,
+      "checkpoint_run_completed_rate": 1.0,
+      "no_checkpoint_completed_rate": 1.0,
+      "checkpoint_deleted_on_completion": 1.0,
+      "audit_trail_present": 1.0,
+      "both_produce_identical_outcome": true,
+      "all_correct": true
+    },
+    "observations": [
+      "Checkpoint deleted on workflow completion.",
+      "Audit trail contains \u22655 records per run.",
+      "Checkpoint and no-checkpoint runs produce identical outcomes."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "completed",
+        "checkpoint_deleted": true,
+        "audit_record_count": 11,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "completed",
+        "checkpoint_deleted": true,
+        "audit_record_count": 11,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "completed",
+        "checkpoint_deleted": true,
+        "audit_record_count": 11,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "completed",
+        "checkpoint_deleted": true,
+        "audit_record_count": 11,
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "completed",
+        "checkpoint_deleted": true,
+        "audit_record_count": 11,
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 1,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 2,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 3,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 4,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 5,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "C",
+        "outcomes_identical": true,
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

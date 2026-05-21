@@ -1,0 +1,157 @@
+{
+  "run_id": "HIL-005_run_008",
+  "experiment_id": "HIL-005",
+  "title": "No Gateway Auto-Rejection",
+  "domain": "human_in_loop",
+  "tier": 1,
+  "hypothesis": "When no HITL gateway is configured, all gated tasks are auto-rejected and the loop escalates after max_replan_attempts.",
+  "depends_on": [
+    "HIL-001"
+  ],
+  "started_at": "2026-05-16T01:15:08.936361+00:00",
+  "finished_at": "2026-05-16T01:15:08.993882+00:00",
+  "duration_seconds": 0.057521,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "No gateway: gated plans escalate 100%, safe plans complete normally \u2014 auto-rejection behaviour confirmed.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_per_scenario": 10,
+      "no_gateway_gated_escalates": 1.0,
+      "no_gateway_safe_completes": 1.0,
+      "all_correct": true
+    },
+    "observations": [
+      "Gated tasks are auto-rejected when no gateway is configured.",
+      "Safe (non-gated) plans complete normally without a gateway.",
+      "Auto-rejection triggers replan loop \u2192 eventually escalates."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "escalated",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 1,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 2,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 3,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 4,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 5,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 6,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 7,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 8,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 9,
+        "outcome": "completed",
+        "correct": true
+      },
+      {
+        "scenario": "B",
+        "trial": 10,
+        "outcome": "completed",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}

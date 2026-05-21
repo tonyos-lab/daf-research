@@ -1,0 +1,27 @@
+{
+  "run_id": "ORC-002_run_001",
+  "experiment_id": "ORC-002",
+  "title": "ScopedContext Tool Isolation",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Calling an unpermitted tool via ScopedContext raises ToolNotFoundError in 100% of cases.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:47:55.989382+00:00",
+  "finished_at": "2026-05-15T15:47:55.989948+00:00",
+  "duration_seconds": 0.000566,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "error",
+    "summary": "Experiment failed with unhandled exception: 1 validation error for ApprovalGrant\napproved_plan\n  Field required [type=missing, input_value={'request_id': UUID('b711...ires_human_gate': False}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "hypothesis_supported": null,
+    "metrics": {},
+    "observations": [],
+    "warnings": [],
+    "errors": [
+      "ValidationError: 1 validation error for ApprovalGrant\napproved_plan\n  Field required [type=missing, input_value={'request_id': UUID('b711...ires_human_gate': False}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+    ],
+    "raw_outputs": [],
+    "notes": ""
+  }
+}

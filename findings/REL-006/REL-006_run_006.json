@@ -1,0 +1,180 @@
+{
+  "run_id": "REL-006_run_006",
+  "experiment_id": "REL-006",
+  "title": "Replan Loop Convergence Rate",
+  "domain": "reliability",
+  "tier": 1,
+  "hypothesis": "When the LLM produces a compliant plan on its second attempt, the loop converges in exactly 2 iterations 100% of the time.",
+  "depends_on": [
+    "REL-003"
+  ],
+  "started_at": "2026-05-16T01:15:13.737638+00:00",
+  "finished_at": "2026-05-16T01:15:13.976020+00:00",
+  "duration_seconds": 0.238382,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "Replan loop converges in exactly N+1 iterations when LLM produces compliant plan on attempt N+1 \u2014 100% deterministic.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "trials_per_scenario": 20,
+      "scenario_A_converge_in_2_rate": 1.0,
+      "scenario_B_converge_in_3_rate": 1.0,
+      "scenario_C_converge_in_1_rate": 1.0,
+      "all_convergence_deterministic": true,
+      "iteration_count_is_exact": true
+    },
+    "observations": [
+      "1 violation \u2192 completed in exactly 2 iterations (100%).",
+      "2 violations \u2192 completed in exactly 3 iterations (100%).",
+      "0 violations \u2192 completed in exactly 1 iteration (100%).",
+      "Iteration count is a pure function of violation count."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "A",
+        "trial": 1,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 2,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 3,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 4,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 5,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 6,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 7,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 8,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 9,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 10,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 11,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 12,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 13,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 14,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 15,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 16,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 17,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 18,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 19,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      },
+      {
+        "scenario": "A",
+        "trial": 20,
+        "outcome": "completed",
+        "iterations": 2,
+        "converged_in_2": true
+      }
+    ],
+    "notes": ""
+  }
+}

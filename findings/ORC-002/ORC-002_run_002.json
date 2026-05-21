@@ -1,0 +1,119 @@
+{
+  "run_id": "ORC-002_run_002",
+  "experiment_id": "ORC-002",
+  "title": "ScopedContext Tool Isolation",
+  "domain": "orchestration",
+  "tier": 1,
+  "hypothesis": "Calling an unpermitted tool via ScopedContext raises ToolNotFoundError in 100% of cases.",
+  "depends_on": [],
+  "started_at": "2026-05-15T15:49:00.150961+00:00",
+  "finished_at": "2026-05-15T15:49:00.151416+00:00",
+  "duration_seconds": 0.000455,
+  "python_version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "result": {
+    "verdict": "pass",
+    "summary": "ScopedContext enforces tool isolation completely \u2014 unpermitted tools are inaccessible by design.",
+    "hypothesis_supported": true,
+    "metrics": {
+      "scenarios_tested": 9,
+      "all_correct": true,
+      "unpermitted_tools_blocked": 5,
+      "permitted_tools_accessible": 2,
+      "names_only_shows_permitted": true,
+      "contains_respects_scope": true
+    },
+    "observations": [
+      "All unpermitted tool access raises ToolNotFoundError.",
+      "Permitted tools remain accessible.",
+      "tools.names() returns only permitted tools.",
+      "__contains__ operator respects scope boundary."
+    ],
+    "warnings": [],
+    "errors": [],
+    "raw_outputs": [
+      {
+        "scenario": "only_read_db_permitted",
+        "permitted": [
+          "read_db"
+        ],
+        "tool": "write_db",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "scenario": "only_read_db_permitted",
+        "permitted": [
+          "read_db"
+        ],
+        "tool": "delete_db",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "scenario": "only_read_db_permitted",
+        "permitted": [
+          "read_db"
+        ],
+        "tool": "send_email",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "scenario": "read_and_write_permitted",
+        "permitted": [
+          "read_db",
+          "write_db"
+        ],
+        "tool": "delete_db",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "scenario": "read_and_write_permitted",
+        "permitted": [
+          "read_db",
+          "write_db"
+        ],
+        "tool": "send_email",
+        "should_raise": true,
+        "raised": true,
+        "correct": true
+      },
+      {
+        "scenario": "permitted_accessible",
+        "permitted": [
+          "read_db"
+        ],
+        "tool": "read_db",
+        "should_raise": false,
+        "raised": false,
+        "correct": true
+      },
+      {
+        "scenario": "all_permitted_accessible",
+        "permitted": [
+          "read_db",
+          "write_db"
+        ],
+        "tool": "write_db",
+        "should_raise": false,
+        "raised": false,
+        "correct": true
+      },
+      {
+        "scenario": "names_only_permitted",
+        "correct": true
+      },
+      {
+        "scenario": "contains_scoped",
+        "correct": true
+      }
+    ],
+    "notes": ""
+  }
+}
