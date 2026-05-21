@@ -55,7 +55,7 @@ python scripts/run_all.py
 | Cost | CST-004, CST-007 | Budget precision, mock vs live divergence |
 | Human-in-Loop | HIL-001 to HIL-006 | Gate triggers, approval flow, timeout behaviour |
 
-## Findings summary (v0.1.0 baseline)
+## Findings summary (v0.1.1 baseline)
 
 | Status | Count | Experiments |
 |---|---|---|
